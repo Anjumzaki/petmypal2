@@ -3,6 +3,7 @@ import { TextInput, StyleSheet,TouchableOpacity, View, Text, Dimensions, Image, 
 import Colors from '../../Constants/Colors';
 import Notification from '../../Components/NotificationComponent'
 import HeaderNewsFeed from '../../Components/HeaderNewsFeed';
+import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -29,5 +30,6 @@ const styles = StyleSheet.create({
         width:width,
         height: height,
         backgroundColor: Colors.white,
+        marginTop:getStatusBarHeight()
     },
 })
