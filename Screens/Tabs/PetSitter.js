@@ -5,6 +5,7 @@ import StatusBar from '../../Components/StatusBar';
 import FlatButton from '../../Components/FlatButton'
 import WhatsMind from '../../Components/WhatsMind'
 import PostFeed from '../../Components/PostFeed'
+import GridView from '../../Components/GridView';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -100,11 +101,18 @@ export default ({navigation}) => {
                     onPress={() => navigation.navigate('WhatsOnMind')}
                 />
 
-                <PostFeed 
-                    source={require('../../assets/images/profilePicture.png')}
-                    PostSource={require('../../assets/images/Post.png')}
-                    CommentClick={() => navigation.navigate('Comment')}
-                />
+                <View style={styles.upload}>
+                    <Text style={{fontWeight: 'bold', fontSize: 16}}>Gallery</Text>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../../assets/images/upload.png')}
+                            resizeMode={'contain'}
+                            style={{height: 25, width: 60}}
+                        />
+                    </TouchableOpacity>
+                </View>
+
+                <GridView />
 
             </ScrollView>
     )
@@ -120,7 +128,7 @@ const styles = StyleSheet.create({
         position: 'absolute', 
         top: 120, 
         flexDirection: 'row',
-        paddingHorizontal: 10
+        paddingHorizontal: 10,
     },
     name:{
         color: Colors.white,
@@ -134,5 +142,10 @@ const styles = StyleSheet.create({
     time:{
         color: Colors.white,
         fontSize: 12
+    },
+    upload:{
+        flexDirection: 'row', 
+        justifyContent:'space-between', 
+        paddingHorizontal: 10
     }
 })

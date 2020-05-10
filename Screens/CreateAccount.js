@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
 import StatusBar from '../Components/StatusBar';
 import Input from '../Components/Input';
 import FlatButton from '../Components/FlatButton';
@@ -15,7 +15,7 @@ export default ({navigation}) => {
     const [isSelected, setSelection] = useState(false);
 
     return (
-            <View
+            <ScrollView
                 style={styles.container}>
                 <StatusBar/>
                 <ImageBackground source={require('../assets/images/Create.png')} style={styles.image} >
@@ -84,7 +84,7 @@ export default ({navigation}) => {
                 />
 
                 </ImageBackground>
-            </View>
+            </ScrollView>
         );
 }
 

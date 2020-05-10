@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
 import StatusBar from '../Components/StatusBar';
 import Button from '../Components/Button';
 import Colors from '../Constants/Colors'
@@ -14,7 +14,7 @@ const height = Dimensions.get('screen').height;
 export default ({navigation}) => {
 
     return (
-            <View
+            <ScrollView
                 style={styles.container}>
                 <StatusBar/>
                 <ImageBackground source={require('../assets/images/Pet.png')} style={styles.image} >
@@ -80,7 +80,7 @@ export default ({navigation}) => {
                     source={require('../assets/images/Footer4.png')}
                 />
                 </ImageBackground>
-            </View>
+            </ScrollView>
         );
 }
 

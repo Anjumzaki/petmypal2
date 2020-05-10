@@ -8,7 +8,10 @@ const height = Dimensions.get('screen').height;
 
 export default (props) => {
     return( 
-        <TouchableOpacity style={[styles.container, props.style]}>
+        <TouchableOpacity 
+            style={[styles.container, props.style]}
+            onPress={props.onPress}
+        >
             <Image
                 style={{height:40, width:40,}}
                 source={require('../assets/images/profilePicture.png')} 
