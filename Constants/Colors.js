@@ -6,7 +6,7 @@ const Colors = {
     success: '#3BFF00',
     inputColor: '#182A53',
     grey: '#424242',
-    unread: '#DFF2F7'
+    unread: '#DFF2F7',
 }
 
 export default Colors;

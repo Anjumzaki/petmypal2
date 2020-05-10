@@ -30,7 +30,7 @@ import Home from '../Screens/BottomTabs/Home'
 import Contacts from '../Screens/BottomTabs/Contacts'
 import Notification from '../Screens/BottomTabs/Notifcation'
 import Chat from '../Screens/BottomTabs/Chat'
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import Colors from '../Constants/Colors';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -43,37 +43,36 @@ export default () => {
         return(
         <BottomTab.Navigator
         initialRouteName="Home"
-        // tabBarOptions={{activeTintColor: colors.primary}}
-        // screenOptions={({ route }) => ({
-        //     tabBarIcon: ({ color, size }) => {
-        //         let activeIcon, inactiveIcon;
+        tabBarOptions={{activeTintColor: Colors.primary}}
+        screenOptions={({ route }) => ({
+            tabBarIcon: ({ color, size }) => {
+                let activeIcon, inactiveIcon;
     
-        //         if(route.name == 'Home'){
-        //             activeIcon = assets.home;
-        //             inactiveIcon = assets.homeGray;
-        //         }
-        //         else if(route.name == 'Configurations'){
-        //             activeIcon = assets.configurations;
-        //             inactiveIcon = assets.configurationsGray;
-        //         }
-        //         else if(route.name == 'Monitoring'){
-        //             activeIcon = assets.monitoring;
-        //             inactiveIcon = assets.monitoringGray;
-        //         }
-        //         else if(route.name == 'Information'){
-        //             activeIcon = assets.infohome;
-        //             inactiveIcon = assets.infoGray;
-        //         }
-        //         else if(route.name == 'Contact'){
-        //             activeIcon = assets.contact;
-        //             inactiveIcon = assets.contactGray;
-        //         }
+                if(route.name == 'Home'){
+                    activeIcon = require('../assets/images/activeHome.png');
+                    inactiveIcon = require('../assets/images/activeHome.png');
+                }
+                else if(route.name == 'Contacts'){
+                    activeIcon = require('../assets/images/contact.png');
+                    inactiveIcon = require('../assets/images/contact.png');
+                }
+                else if(route.name == 'Notification'){
+                    activeIcon = require('../assets/images/notification.png');
+                    inactiveIcon = require('../assets/images/notification.png');
+                }
+                else if(route.name == 'Chat'){
+                    activeIcon = require('../assets/images/chat.png');
+                    inactiveIcon = require('../assets/images/chat.png');
+                }
               
-        //         return <Image source={ color == '#8E8E8F' ? inactiveIcon : activeIcon} style={{width: size, height: size}} />
-        //     }
-        //   })}
+                return <Image 
+                        source={ color == '#8E8E8F' ? inactiveIcon : activeIcon} style={{width: size, height: size}} 
+                        resizeMode={'contain'}
+                        />
+            }
+          })}
         >
-            <BottomTab.Screen name="Home" children={createDrawerTab} />
+            <BottomTab.Screen name="Home" children={createDrawerTab}/>
             <BottomTab.Screen name="Contacts" component={Contacts} />
             <BottomTab.Screen name="Notification" component={Notification} />
             <BottomTab.Screen name="Chat" component={Chat} />

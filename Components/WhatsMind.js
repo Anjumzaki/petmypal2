@@ -10,8 +10,9 @@ export default (props) => {
                 style={styles.container}>
                 <Image 
                     // source={props.source}
-                    style={{height:50,width:50, marginLeft:5}}
+                    style={{height:45,width:45, marginLeft:5}}
                     source={props.source}
+                    resizeMode={'contain'}
                 />
                 <WhatsMindButton
                     searchText="What's on your mind?"
