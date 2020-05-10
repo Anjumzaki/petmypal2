@@ -50,18 +50,18 @@ export default () => {
     
                 if(route.name == 'Home'){
                     activeIcon = require('../assets/images/activeHome.png');
-                    inactiveIcon = require('../assets/images/activeHome.png');
+                    inactiveIcon = require('../assets/images/inactiveHome.png');
                 }
                 else if(route.name == 'Contacts'){
-                    activeIcon = require('../assets/images/contact.png');
+                    activeIcon = require('../assets/images/inactivecontact.png');
                     inactiveIcon = require('../assets/images/contact.png');
                 }
                 else if(route.name == 'Notification'){
-                    activeIcon = require('../assets/images/notification.png');
+                    activeIcon = require('../assets/images/activenotification.png');
                     inactiveIcon = require('../assets/images/notification.png');
                 }
                 else if(route.name == 'Chat'){
-                    activeIcon = require('../assets/images/chat.png');
+                    activeIcon = require('../assets/images/activechat.png');
                     inactiveIcon = require('../assets/images/chat.png');
                 }
               
