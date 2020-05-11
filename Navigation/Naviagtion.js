@@ -89,7 +89,6 @@ export default () => {
         >
             <Drawer.Screen name="DrawerList"
                 children={createTopTabs}
-                options={{headerShown: false}}
             />
         </Drawer.Navigator>
         )
@@ -180,26 +179,7 @@ export default () => {
                 />
                 <Stack.Screen name="Home"
                     children={createBottomTab}
-                    options={{
-                        headerShown: false 
-                        // headerTitleAlign: 'center',
-                        // headerBackTitle:'none',
-                        // headerTitle: 'News Feed',
-                        // headerLeft: () => (
-                        //     <Text
-                        //         title=""
-                        //         border= 'none'
-                        //     />
-                        // ),
-                        // headerRight: () => (
-                        //     <TouchableOpacity>
-                        //         <Image source={require('../assets/images/menu.png')}
-                        //         resizeMode={'contain'}
-                        //         style={{height:15, width:15, marginRight: 10}}
-                        //         />
-                        //     </TouchableOpacity>
-                        // )
-                    }}
+
                 />
                 <Stack.Screen name="UploadGallery"
                     children={UploadGallery}
