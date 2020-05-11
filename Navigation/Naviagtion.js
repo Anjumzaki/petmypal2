@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import {createDrawerNavigator, DrawerContent} from '@react-navigation/drawer'
@@ -208,8 +208,8 @@ export default () => {
                         headerBackTitle:'none',
                         headerTitle: 'Upload Gallery',
                         headerRight: () => (
-                            <TouchableOpacity>
-                                <Text>Upload</Text>
+                            <TouchableOpacity style={{padding:10}}>
+                                <Text style={{fontSize:18}}>Upload</Text>
                             </TouchableOpacity>
                         )
                     }}

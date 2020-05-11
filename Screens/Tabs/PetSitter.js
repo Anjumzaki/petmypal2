@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
+import { View, Text, Alert, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView , Modal, TouchableHighlight} from 'react-native';
 import Colors from '../../Constants/Colors'
 import StatusBar from '../../Components/StatusBar';
 import FlatButton from '../../Components/FlatButton'
@@ -11,6 +11,7 @@ const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 export default ({navigation}) => {
+    const [modalVisible, setModalVisible] = useState(false);
 
     return (
             <ScrollView
@@ -40,13 +41,41 @@ export default ({navigation}) => {
                         />
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity 
+                    onPress={() => { setModalVisible(true)}}>
                         <Image
                         source={require('../../assets/images/whiteMenu.png')}
                         resizeMode={'contain'}
                         style={{height:30, width: 20, marginLeft: 10, }}
                         />
                     </TouchableOpacity>                    
+                </View>
+
+                <View style={styles.centeredView}>
+                    <Modal
+                        animationType="none"
+                        transparent={true}
+                        visible={modalVisible}
+                        onRequestClose={() => {
+                            setModalVisible(!modalVisible);
+                        }}
+                    >
+                        <View style={styles.centeredView}>
+                        <View style={styles.modalView}>
+                            <Text style={styles.modalText}>Hello World!</Text>
+
+                            <TouchableHighlight
+                            style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                            }}
+                            >
+                            <Text style={styles.textStyle}>Hide Modal</Text>
+                            </TouchableHighlight>
+                        </View>
+                        </View>
+                    </Modal>
+
                 </View>
 
                 <View style={styles.description}>
@@ -149,5 +178,44 @@ const styles = StyleSheet.create({
         flexDirection: 'row', 
         justifyContent:'space-between', 
         paddingHorizontal: 10
-    }
+    },
+    centeredView: {
+        position: 'absolute',
+        top:50,
+        left:'50%',
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "flex-end",
+        marginTop: 2
+      },
+      modalView: {
+        margin: 20,
+        backgroundColor: "white",
+        borderRadius: 20,
+        padding: 35,
+        alignItems: "center",
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5
+      },
+      openButton: {
+        backgroundColor: "#F194FF",
+        borderRadius: 20,
+        padding: 10,
+        elevation: 2
+      },
+      textStyle: {
+        color: "white",
+        fontWeight: "bold",
+        textAlign: "center"
+      },
+      modalText: {
+        marginBottom: 15,
+        textAlign: "center"
+      }
 })

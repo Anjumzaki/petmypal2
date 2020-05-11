@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
-import Colors from '../../Constants/Colors'
-import StatusBar from '../../Components/StatusBar';
+import Colors from '../Constants/Colors'
+import StatusBar from '../Components/StatusBar';
+import GridView from '../Components/GridView'
+import UploadGrid from '../Components/UploadGrid';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -14,21 +16,62 @@ export default ({navigation}) => {
                 <StatusBar/>
 
                 <View style={styles.description}>
-
                     <Image
-                        source={require('../../assets/images/catProfile.png')}
+                        source={require('../assets/images/catProfile.png')}
                         style={{height:50, width:50}}
                     />
 
                     <View style={{flexDirection: 'column', marginLeft:5}}>
                         <Text style={styles.name}>Cat Walker</Text>
                         <Text style={styles.desc}>Cat Walking | Cat Grooming</Text>
-                        <Text style={styles.time}>Timing: 10AM - 5PM (Mon-Sat)</Text>
                     </View>
-   
                 </View>
 
-                <GridView />
+                <View style={styles.upload}>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/images/frinedsUpload.png')}
+                            style={{height:30, width:120}}
+                            resizeMode={'contain'}
+                        />
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/images/pageUpload.png')}
+                            style={{height:30, width:120}}
+                            resizeMode={'contain'}
+                        />
+                    </TouchableOpacity>
+                </View>
+
+                <View style={styles.upload}>
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/images/smileUpoad.png')}
+                            style={{height:30, width:80}}
+                            resizeMode={'contain'}
+                        />
+                    </TouchableOpacity>
+                    
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/images/videoUpload.png')}
+                            style={{height:30, width:80}}
+                            resizeMode={'contain'}
+                        />
+                    </TouchableOpacity>
+
+                    <TouchableOpacity>
+                        <Image
+                            source={require('../assets/images/imagesUpload.png')}
+                            style={{height:30, width:80}}
+                            resizeMode={'contain'}
+                        />
+                    </TouchableOpacity>
+                </View>
+
+                <UploadGrid />
 
             </ScrollView>
     )
@@ -41,23 +84,28 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.white
     },
     description:{
-        position: 'absolute', 
-        top: 120, 
+        padding : 10,
         flexDirection: 'row',
-        paddingHorizontal: 10,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     name:{
-        color: Colors.white,
+        color: Colors.black,
         fontWeight: 'bold',
         fontSize: 18
     },
     desc:{
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 12
     },
     time:{
-        color: Colors.white,
+        color: Colors.black,
         fontSize: 12
     },
+    upload:{
+        padding : 10,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 })

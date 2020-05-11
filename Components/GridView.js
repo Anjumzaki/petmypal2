@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, ScrollView } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, ScrollView, TouchableOpacity } from 'react-native';
 import Colors from '../Constants/Colors';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
