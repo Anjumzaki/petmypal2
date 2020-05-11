@@ -32,6 +32,9 @@ import Notification from '../Screens/BottomTabs/Notifcation'
 import Chat from '../Screens/BottomTabs/Chat'
 import Colors from '../Constants/Colors';
 import UploadGallery from '../Screens/UploadGallery';
+import VendorSignin from '../Screens/VendorSignin';
+import VendorSignup from '../Screens/VendorSignup';
+import CreateAccountCategory from '../Screens/CreateAccountCategory';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -120,6 +123,10 @@ export default () => {
                     component={Welcome}
                     options={{ headerShown: false }}
                 />
+                <Stack.Screen name="VendorSignup" 
+                    component={VendorSignup}
+                    options={{ headerShown: false }}
+                />
                 <Stack.Screen name="Signup" 
                     component={Signup}
                     options={{ headerShown: false }}
@@ -128,12 +135,20 @@ export default () => {
                     component={Signin}
                     options={{ headerShown: false }}
                 />
+                <Stack.Screen name="VendorSignin"
+                    component= {VendorSignin}
+                    options={{ headerShown: false }}
+                />
                 <Stack.Screen name="ForgetPassword" 
                     component={ForgetPassword}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen name="ForgetPasswordCode" 
                     component={ForgetPasswordCode}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="CreateAccountCategory" 
+                    component={CreateAccountCategory}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen name="CreateAccount" 

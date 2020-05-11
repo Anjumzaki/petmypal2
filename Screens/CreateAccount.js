@@ -33,44 +33,23 @@ export default ({navigation}) => {
                <View style={{flex: 1, marginTop:'25%'}}>
                <Input
                     source={require('../assets/images/person.png')}
-                    placeholder="Name" 
+                    placeholder="Pet Name" 
                 />
 
                 <Input
                     source= {require('../assets/images/email.png')}
-                    placeholder="Email" 
+                    placeholder="Pet Owner First Name" 
                 />
 
                 <Input
                     source= {require('../assets/images/email.png')}
+                    placeholder="Pet Owner Last Name" 
+                />
+
+                <Input
+                    source= {require('../assets/images/password.png')}
                     placeholder="Mobile Number" 
                 />
-
-                <Input
-                    source= {require('../assets/images/password.png')}
-                    placeholder="Password" 
-                />
-
-                <Input
-                    source= {require('../assets/images/password.png')}
-                    placeholder="Re-type" 
-                />
-
-                <Text style={styles.policy}>
-                    By clicking Sign Up, you agree to <Text style={{color: Colors.primary}}>our Terms,{'\n'}
-                    Data Policy</Text>  and <Text style={{color: Colors.primary}}> Cookie Policy </Text>.You may{'\n'}
-                    receive SMS notifications from us{'\n'}
-                    and can opt out at any time.
-                </Text>
-
-                <View style={styles.CheckBoxContainer}>
-                    <CheckBox
-                    value={isSelected}
-                    style={styles.checkbox}
-                    onPress= { isSelected => setSelection(true)}
-                    />
-                    <Text style={styles.label}>Accept the terms and condtions</Text>
-                </View>
 
                 <FlatButton
                     ButtonText="Next"
@@ -123,18 +102,4 @@ const styles = StyleSheet.create({
         color: Colors.white,
         textAlign: 'center',
     },
-    policy:{
-        textAlign:'center',
-        color:'white',
-        fontSize: 18
-    },
-    CheckBoxContainer:{
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignSelf: 'center',
-      },
-      label:{
-          color: Colors.white,
-          top:5
-      }
 })

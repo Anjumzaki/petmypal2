@@ -21,21 +21,20 @@ export default ({navigation}) => {
                 />
 
                 <View style={styles.textview}>
-                    <Text style={styles.firsttext}>Share Your Pet life with Pals</Text>
-                    <Text style={styles.Secondtext}>Sharing Pet Stories was not easy.Just create an account and use it like other social media sites</Text>
+                    <Text style={styles.firsttext}>Signup as Vendor</Text>
+                    <Text style={styles.Secondtext}>Sharing pet stories was not that easy. Just create an account and use it like other social media sites</Text>
 
                     <View style={styles.button}>
-                        <TouchableOpacity>
-                            <Text style={styles.fb}>Connect with Facebook</Text>
-                        </TouchableOpacity>
-
-                        <TouchableOpacity >
-                            <Text style={styles.gmtext}>Connect with Gmail</Text>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Signup')}
+                        >
+                            <Text style={styles.fb}>Pet Service Provider</Text>
                         </TouchableOpacity>
 
                         <TouchableOpacity 
-                            onPress={() => navigation.navigate('CreateAccountCategory')}>
-                            <Text style={styles.email}>Connect with Email</Text>
+                            onPress={() => navigation.navigate('Signup')}
+                        >
+                            <Text style={styles.gmtext}>Signup as Veterinary</Text>
                         </TouchableOpacity>
 
                     </View>
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
     textview:
     {
         flex: 1,
-        top: '50%',
+        top: '60%',
         position: 'absolute',
         flexDirection: 'column',
         alignSelf: 'center',

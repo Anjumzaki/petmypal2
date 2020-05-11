@@ -46,12 +46,13 @@ export default ({navigation}) => {
               <Button
                 style={{backgroundColor: Colors.white, color: Colors.black}}
                 ButtonText="Sign up"
-                onPress={() => navigation.navigate('Signup')}
+                onPress={() => navigation.navigate('VendorSignup')}
               />
             </View>
 
             <TouchableOpacity
               style={{marginTop:20}}
+              onPress={() => navigation.navigate('VendorSignin')}
             >
               <Text style={styles.vendor}>Vendor Login</Text>
             </TouchableOpacity>
