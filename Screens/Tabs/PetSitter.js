@@ -61,18 +61,35 @@ export default ({navigation}) => {
                         }}
                     >
                         <View style={styles.centeredView}>
-                        <View style={styles.modalView}>
-                            <Text style={styles.modalText}>Hello World!</Text>
+                            <View style={styles.modalView}>
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Update Profile</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Update Cover Photo</Text>
+                                </TouchableOpacity>
+          
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Update Logo</Text>
+                                </TouchableOpacity>
+                                
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Block Members</Text>
+                                </TouchableOpacity>
+    
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Upgrade Plan</Text>
+                                </TouchableOpacity>
+    
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Invite as Admin</Text>
+                                </TouchableOpacity>
 
-                            <TouchableHighlight
-                            style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
-                            onPress={() => {
-                                setModalVisible(!modalVisible);
-                            }}
-                            >
-                            <Text style={styles.textStyle}>Hide Modal</Text>
-                            </TouchableHighlight>
-                        </View>
+                                <TouchableOpacity>
+                                    <Text style={styles.modalText}>Remove Page</Text>
+                                </TouchableOpacity>
+                              
+                            </View>
                         </View>
                     </Modal>
 
@@ -182,18 +199,15 @@ const styles = StyleSheet.create({
     centeredView: {
         position: 'absolute',
         top:50,
-        left:'50%',
+        left:'52%',
         flex: 1,
-        justifyContent: "center",
-        alignItems: "flex-end",
         marginTop: 2
       },
       modalView: {
         margin: 20,
         backgroundColor: "white",
         borderRadius: 20,
-        padding: 35,
-        alignItems: "center",
+        padding: 20,
         shadowColor: "#000",
         shadowOffset: {
           width: 0,
@@ -203,19 +217,13 @@ const styles = StyleSheet.create({
         shadowRadius: 3.84,
         elevation: 5
       },
-      openButton: {
-        backgroundColor: "#F194FF",
-        borderRadius: 20,
-        padding: 10,
-        elevation: 2
-      },
       textStyle: {
         color: "white",
         fontWeight: "bold",
-        textAlign: "center"
+        // textAlign: "center"
       },
       modalText: {
         marginBottom: 15,
-        textAlign: "center"
+        // textAlign: "center"
       }
 })
