@@ -38,64 +38,78 @@ export default ({navigation}) => {
                     <View style={styles.category}>
                         <Category 
                             source={Images.pet1}
+                            categoryName="Rodent"
                         />
 
                         <Category 
                             source={Images.pet2}
+                            categoryName="Dogs"
                         />
 
                         <Category 
                             source={Images.pet3}
+                            categoryName="Cats"
                         />
 
                         <Category 
                             source={Images.pet4}
+                            categoryName="Birds"
                         />
                     </View>
 
                     <View style={styles.category}>
                         <Category 
                             source={Images.pet5}
+                            categoryName="Fish"
                         />
 
                         <Category 
                             source={Images.pet6}
+                            categoryName="Cow"
                         />
 
                         <Category 
                             source={Images.pet7}
+                            categoryName="Horse"
                         />
 
                         <Category 
                             source={Images.pet8}
+                            categoryName="Parrot"
                         />
                     </View>
 
                     <View style={styles.category}>
                         <Category 
                             source={Images.pet9}
+                            categoryName="Rabbit"
                         />
 
                         <Category 
                             source={Images.pet10}
+                            categoryName="Snake"
                         />
 
                         <Category 
                             source={Images.pet11}
+                            categoryName="Tutle"
                         />
 
                         <Category 
                             source={Images.pet12}
+                            categoryName="Pig"
                         />
                     </View>
 
                     <View style={styles.category}>
                         <Category 
                             source={Images.pet13}
+                            categoryName="Others"
                         />
 
                         <Category 
                             source={Images.pet14}
+                            categoryName="No Pet"
                         />
                     </View>
                                         

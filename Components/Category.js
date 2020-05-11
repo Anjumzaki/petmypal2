@@ -13,6 +13,7 @@ export default (props) => {
                     resizeMode={'contain'}
                     style={{width: 50, height: 50}}
                 />
+                <Text style={styles.categoryName}>{props.categoryName}</Text>
             </TouchableOpacity>
         </View>
     )
@@ -26,5 +27,11 @@ const styles = StyleSheet.create({
       height: 60,
       width: 60,
       borderRadius: 100/2,
+      marginTop: 10,
+  },
+  categoryName:{
+      color: Colors.white,
+      textAlign:'center',
+      marginTop: 5
   }  
 })
