@@ -103,7 +103,9 @@ export default ({navigation}) => {
 
                 <View style={styles.upload}>
                     <Text style={{fontWeight: 'bold', fontSize: 16}}>Gallery</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('UploadGallery')}
+                    >
                         <Image
                             source={require('../../assets/images/upload.png')}
                             resizeMode={'contain'}

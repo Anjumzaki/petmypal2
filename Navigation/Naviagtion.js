@@ -31,6 +31,7 @@ import Contacts from '../Screens/BottomTabs/Contacts'
 import Notification from '../Screens/BottomTabs/Notifcation'
 import Chat from '../Screens/BottomTabs/Chat'
 import Colors from '../Constants/Colors';
+import UploadGallery from '../Screens/UploadGallery';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -53,7 +54,7 @@ export default () => {
                     inactiveIcon = require('../assets/images/inactiveHome.png');
                 }
                 else if(route.name == 'Contacts'){
-                    activeIcon = require('../assets/images/inactivecontact.png');
+                    activeIcon = require('../assets/images/activecontact.png');
                     inactiveIcon = require('../assets/images/contact.png');
                 }
                 else if(route.name == 'Notification'){
@@ -200,6 +201,20 @@ export default () => {
                         // )
                     }}
                 />
+                <Stack.Screen name="UploadGallery"
+                    children={UploadGallery}
+                    options={{
+                        headerTitleAlign: 'center',
+                        headerBackTitle:'none',
+                        headerTitle: 'Upload Gallery',
+                        headerRight: () => (
+                            <TouchableOpacity>
+                                <Text>Upload</Text>
+                            </TouchableOpacity>
+                        )
+                    }}
+                />
+
             </Stack.Navigator>
 
         </NavigationContainer>
