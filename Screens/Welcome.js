@@ -12,6 +12,7 @@ import Button from '../Components/Button';
 import StatusBar from '../Components/StatusBar';
 import Colors from '../Constants/Colors';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 const screenWidth = Dimensions.get('screen').width;
 const screenHeight = Dimensions.get('screen').height;
 
@@ -48,6 +49,12 @@ export default ({navigation}) => {
                 onPress={() => navigation.navigate('Signup')}
               />
             </View>
+
+            <TouchableOpacity
+              style={{marginTop:20}}
+            >
+              <Text style={styles.vendor}>Vendor Login</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ImageBackground>
@@ -87,4 +94,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     top: 10,
   },
+  vendor:{
+    color: Colors.white,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
 });

@@ -3,12 +3,13 @@ import {
   StyleSheet,
   View,
   Image,
-  Dimensions
+  Dimensions,
+  ImageBackground
 } from 'react-native';
 import Colors from '../Constants/Colors'
 
-const screenwWidth = Dimensions.get('window').width;
-const screenHeight = Dimensions.get('window').height;
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
 
 export default ({navigation}) => {
 
@@ -22,24 +23,34 @@ export default ({navigation}) => {
   return (
       <View 
           style={styles.Header}>
-        <Image 
-            style={styles.Logo}
-            source = {require('../assets/images/icon.png')} 
-        />
+            <Image
+              source={require('../assets/images/splash.png')} style={styles.image}
+              resizeMode={'cover'}
+            />
+            <View style={{ justifyContent: 'center',alignItems: 'center', marginTop: 20}}>
+              <Image 
+                style={styles.Logo}
+                source = {require('../assets/images/icon.png')} 
+              />
+            </View>
+              
       </View>
   );
 };
 
 const styles = StyleSheet.create({
   Header:{
-      justifyContent: 'center',
-      alignItems: 'center',
       backgroundColor: Colors.primary,
-      height: screenHeight,
-      width: screenwWidth
+      height: height,
+      width: width
+  },
+  image:{
+        width: width,
+        height: '75%',
+        paddingHorizontal:10
   },
   Logo:{
       height: 100,
-      width:180
+      width:180,
   }
 });
