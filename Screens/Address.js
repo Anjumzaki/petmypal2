@@ -7,6 +7,7 @@ import Colors from '../Constants/Colors'
 import Footer from '../Components/Footer';
 import CheckBox from '@react-native-community/checkbox'
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import Images from '../Constants/Images'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -18,7 +19,7 @@ export default ({navigation}) => {
             <ScrollView
                 style={styles.container}>
                 <StatusBar/>
-                <ImageBackground source={require('../assets/images/Create.png')} style={styles.image} >
+                <ImageBackground source={require('../assets/images/Pet.png')} style={styles.image} >
                 <Image
                     source={require('../assets/images/icon.png')} 
                     style={styles.paltext}
@@ -26,60 +27,55 @@ export default ({navigation}) => {
                 />
 
                 <View style={styles.textview}>
-                    <Text style={styles.welcome}>Address</Text>
-                    <Text style={styles.logintext}>Check your phone no we sent you{'\n'}code for verification.</Text>
+                    <Text style={styles.welcome}>A little more about yourself</Text>
                 </View>
            
-               <View style={{flex: 1, marginTop:'20%'}}>
+               <View style={{flex: 1, marginTop:'10%'}}>
                <Input
-                    source= {require('../assets/images/address.png')}
-                    placeholder="Address1" 
+                    source= {Images.email}
+                    placeholder="Email" 
                 />
+                
+                <View style={{flexDirection:'row', alignItems: 'center', justifyContent: 'center', marginRight: 30}}>
+                    <View style={{width:'70%', marginRight: 30}}>
+                        <Input
+                            source= {Images.others}
+                            placeholder="Gender" 
+                        />
+                    </View>
+                    
+                    <View style={{height:40, width:40, padding:5, borderRadius: 100/2, backgroundColor: Colors.input, alignItems: 'center'}}>
+                        <Image
+                            source ={Images.question}
+                            style= {{height: 35, width: 35}}
+                            resizeMode={'contain'}
+                        />
+                    </View>
+                </View>
 
                 <Input
-                    source= {require('../assets/images/address.png')}
-                    placeholder="Address2" 
+                    source= {Images.dob}
+                    placeholder="Date of birth *" 
                 />
 
-                <Input
-                    source= {require('../assets/images/country.png')}
-                    placeholder="Country" 
-                />
-
-                <Input
-                    source= {require('../assets/images/state.png')}
-                    placeholder="State" 
-                />
-
-                <Input
-                    source= {require('../assets/images/city.png')}
-                    placeholder="City" 
-                />
-
-                <Input
-                    source= {require('../assets/images/zipcode.png')}
-                    placeholder="Zip Code" 
-                />
-
-                <Input
-                    source= {require('../assets/images/dob.png')}
-                    placeholder="Date of birth" 
-                />
-
-                <Input
-                    source= {require('../assets/images/others.png')}
-                    placeholder="Others" 
-                />
+                <View style={styles.CheckBoxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    style={styles.checkbox}
+                    onPress= { isSelected => setSelection(true)}
+                    />
+                    <Text style={styles.label}>Accept the terms and condtions</Text>
+                </View>
 
                 <FlatButton
-                    ButtonText="Next"
-                    onPress={() => navigation.navigate('PetRegister')}
+                    ButtonText="Finish"
+                    // onPress={() => navigation.navigate('')}
                 />
 
                </View>
                 
                 <Footer 
-                    source={require('../assets/images/Footer3.png')}
+                    source={require('../assets/images/Footer4.png')}
                 />
 
                 </ImageBackground>
@@ -107,19 +103,25 @@ const styles = StyleSheet.create({
     textview: {
         flexDirection: 'column',
         position: 'absolute',
-        top: '10%',
+        top: '15%',
         alignSelf: 'center',
     },
     welcome: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
         color: Colors.white,
         textAlign:'center'
     },
-    logintext: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: Colors.white,
-        textAlign: 'center',
+    CheckBoxContainer:{
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignSelf: 'center',
     },
+    checkbox:{
+        borderColor: Colors.white
+    },
+    label:{
+      color: Colors.white,
+      top:5
+    }
 })

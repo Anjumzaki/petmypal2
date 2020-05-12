@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity, ScrollView } from 'react-native';
 import StatusBar from '../Components/StatusBar';
 import Input from '../Components/Input';
 import FlatButton from '../Components/FlatButton';
@@ -7,7 +7,7 @@ import Colors from '../Constants/Colors'
 import Footer from '../Components/Footer';
 import CheckBox from '@react-native-community/checkbox'
 import {getStatusBarHeight} from 'react-native-status-bar-height';
-import Images from '../Constants/Images';
+import Images from '../Constants/Images'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -16,7 +16,7 @@ export default ({navigation}) => {
     const [isSelected, setSelection] = useState(false);
 
     return (
-            <View
+            <ScrollView
                 style={styles.container}>
                 <StatusBar/>
                 <ImageBackground source={require('../assets/images/Create.png')} style={styles.image} >
@@ -27,28 +27,50 @@ export default ({navigation}) => {
                 />
 
                 <View style={styles.textview}>
-                    <Text style={styles.welcome}>What is your number ?</Text>
-                    <Text style={styles.logintext}>We'll text a code to verify mobile</Text>
+                    <Text style={styles.welcome}>Create account</Text>
+                    <Text style={styles.logintext}>Create your free account today</Text>
                 </View>
            
-               <View style={{flex: 1, marginTop:'30%'}}>
-                    <Input
-                        source= {Images.number}
-                        placeholder="Number" 
-                    />
+               <View style={{flex: 1, marginTop:'20%'}}>
+               <Input
+                    source= {Images.password}
+                    placeholder="Password" 
+                />
 
-                    <FlatButton
-                        ButtonText="Confirm"
-                        onPress={() => navigation.navigate('VerifyNumber')}
+                <Input
+                    source= {Images.password}
+                    placeholder="Re-type" 
+                />
+
+                <Text style={styles.policy}>
+                    By clicking Sign Up, you agree to <Text style={{color: Colors.primary}}>our Terms,{'\n'}
+                    Data Policy</Text>  and <Text style={{color: Colors.primary}}> Cookie Policy </Text>.You may{'\n'}
+                    receive SMS notifications from us{'\n'}
+                    and can opt out at any time.
+                </Text>
+
+                <View style={styles.CheckBoxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    style={styles.checkbox}
+                    onPress= { isSelected => setSelection(true)}
                     />
+                    <Text style={styles.label}>Accept the terms and condtions</Text>
+                </View>
+
+                <FlatButton
+                    ButtonText="Next"
+                    onPress={() => navigation.navigate('PetRegister')}
+                />
+
                </View>
                 
                 <Footer 
-                    source={require('../assets/images/VerifyFooter.png')}
+                    source={require('../assets/images/Footer3.png')}
                 />
 
                 </ImageBackground>
-            </View>
+            </ScrollView>
         );
 }
 
@@ -76,30 +98,33 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     welcome: {
-        flex: 1,
         fontSize: 30,
         fontWeight: 'bold',
         color: Colors.white,
+        textAlign:'center'
     },
     logintext: {
         fontSize: 16,
         fontWeight: 'bold',
         color: Colors.white,
         textAlign: 'center',
-        marginTop: 5
     },
     policy:{
         textAlign:'center',
         color:'white',
-        fontSize: 18
+        fontSize: 18,
+        marginTop: 10
     },
     CheckBoxContainer:{
         flexDirection: 'row',
         justifyContent: 'center',
         alignSelf: 'center',
-      },
-      label:{
-          color: Colors.white,
-          top:5
-      }
+    },
+    checkbox:{
+        borderColor: Colors.white
+    },
+    label:{
+      color: Colors.white,
+      top:5
+    }
 })

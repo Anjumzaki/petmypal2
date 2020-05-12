@@ -13,6 +13,20 @@ const Images = {
     pet12: require('../assets/images/pet12.png'),
     pet13: require('../assets/images/pet13.png'),
     pet14: require('../assets/images/pet14.png'),
+    puppy: require('../assets/images/puppy.png'),
+    smalldog: require('../assets/images/smalldog.png'),
+    mediumdog: require('../assets/images/mediumdog.png'),
+    largedog: require('../assets/images/largedog.png'),
+    giantdog: require('../assets/images/giantdog.png'),
+    subtype: require('../assets/images/dob.png'),
+    others: require('../assets/images/others.png'),
+    email:  require('../assets/images/email.png'),
+    dob: require('../assets/images/dob.png'),
+    question: require('../assets/images/question.png'),
+    password: require('../assets/images/password.png'),
+    number: require('../assets/images/number.png'),
+    petname: require('../assets/images/petname.png'),
+    person: require('../assets/images/person.png')
 }
 
 export default Images;

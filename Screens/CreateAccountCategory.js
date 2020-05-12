@@ -32,7 +32,7 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>Create your free account today</Text>
                 </View>
            
-                <View style={{flex: 1, marginTop:'25%'}}>
+                <View style={{flex: 1, marginTop:'20%'}}>
                     <Text style={styles.logintext}>Select  your pet catagory</Text>
 
                     <View style={styles.category}>

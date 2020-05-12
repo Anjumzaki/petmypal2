@@ -7,6 +7,7 @@ import CircleInput from '../Components/CircleInput';
 import Footer from '../Components/Footer';
 import Input from '../Components/Input'
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import Images from '../Constants/Images';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -31,6 +32,7 @@ export default ({navigation}) => {
 
                 <View style={{flex:1 , marginTop:'38%'}}>
                     <Input
+                        source= {Images.number}
                         placeholder="Number" 
                     />
 

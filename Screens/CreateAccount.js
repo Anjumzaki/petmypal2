@@ -7,12 +7,13 @@ import Colors from '../Constants/Colors'
 import Footer from '../Components/Footer';
 import CheckBox from '@react-native-community/checkbox'
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import Category from '../Components/Category';
+import Images from '../Constants/Images'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 export default ({navigation}) => {
-    const [isSelected, setSelection] = useState(false);
 
     return (
             <ScrollView
@@ -30,31 +31,48 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>Create your free account today</Text>
                 </View>
            
-               <View style={{flex: 1, marginTop:'25%'}}>
-               <Input
-                    source={require('../assets/images/person.png')}
-                    placeholder="Pet Name" 
-                />
+               <View style={{flex: 1, marginTop:'20%'}}>
+               <Text style={styles.logintext}>Select  your pet catagory</Text>
 
-                <Input
-                    source= {require('../assets/images/email.png')}
-                    placeholder="Pet Owner First Name" 
-                />
+                <View style={{flexDirection: 'row', justifyContent:'space-evenly', alignItems: 'center'}}>
+                    <Category 
+                        source={Images.pet1}
+                        categoryName="Rodent"
+                    />
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('CreateAccountCategory')}
+                    >
+                        <Text style={styles.ChangePet}>Change Pet</Text>
+                    </TouchableOpacity>
+                    
+                </View>
 
-                <Input
-                    source= {require('../assets/images/email.png')}
-                    placeholder="Pet Owner Last Name" 
-                />
+                <View style={{marginTop:'10%'}}>
+                    <Input
+                        source={Images.petname}
+                        placeholder="Pet Name" 
+                    />
 
-                <Input
-                    source= {require('../assets/images/password.png')}
-                    placeholder="Mobile Number" 
-                />
+                    <Input
+                        source= {Images.person}
+                        placeholder="Pet Owner First Name" 
+                    />
 
-                <FlatButton
-                    ButtonText="Next"
-                    onPress={() => navigation.navigate('UserNumber')}
-                />
+                    <Input
+                        source= {Images.person}
+                        placeholder="Pet Owner Last Name" 
+                    />
+
+                    <Input
+                        source= {Images.number}
+                        placeholder="Mobile Number" 
+                    />
+
+                    <FlatButton
+                        ButtonText="Next"
+                        onPress={() => navigation.navigate('VerifyNumber')}
+                    />
+                </View>
 
                </View>
                 
@@ -102,4 +120,10 @@ const styles = StyleSheet.create({
         color: Colors.white,
         textAlign: 'center',
     },
+    ChangePet:{
+        color: Colors.white,
+        textDecorationLine: 'underline',
+        fontSize: 20,
+        fontWeight: 'bold'
+    }
 })

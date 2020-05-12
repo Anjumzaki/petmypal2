@@ -35,6 +35,7 @@ import UploadGallery from '../Screens/UploadGallery';
 import VendorSignin from '../Screens/VendorSignin';
 import VendorSignup from '../Screens/VendorSignup';
 import CreateAccountCategory from '../Screens/CreateAccountCategory';
+import CreatePassword from '../Screens/CreatePassword'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -165,6 +166,10 @@ export default () => {
                 />
                 <Stack.Screen name="UserVerified" 
                     component={UserVerified}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="CreatePassword" 
+                    component={CreatePassword}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen name="Address" 

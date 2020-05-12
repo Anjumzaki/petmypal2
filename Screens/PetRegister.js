@@ -6,7 +6,10 @@ import Colors from '../Constants/Colors'
 import CircleInput from '../Components/CircleInput';
 import Footer from '../Components/Footer';
 import Input from '../Components/Input'
+import FlatButton from '../Components/FlatButton';
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import Category from '../Components/Category';
+import Images from '../Constants/Images'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -25,54 +28,61 @@ export default ({navigation}) => {
                 />
 
                 <View style={styles.textview}>
-                    <Text style={styles.welcome}>Enter the code to verify{'\n'} your phone number</Text>
-                    <Text style={styles.logintext}>Verification code has been sent to your {'\n'} mobile number</Text>
-                    <Image 
-                        source={require('../assets/images/PetProfile.png')}
-                        style={styles.petProfile}
-                        resizeMode={'contain'}
-                    />
+                    <Text style={styles.welcome}>Tell us more about [PET NAME]</Text>
                 </View>
 
-                <View style={{flex:1 , marginTop:'60%'}}>
+                <View style={{flex:1 , marginTop:'5%'}}>
                     <Input
-                        source= {require('../assets/images/person.png')}
-                        placeholder="Pet name" 
-                    />
-                    <Input
-                        source= {require('../assets/images/person.png')}
-                        placeholder="Pet type" 
-                    />
-
-                    <Input
-                        source= {require('../assets/images/person.png')}
+                        source= {require('../assets/images/subtype.png')}
                         placeholder="Sub type" 
                     />
 
-                    <Input
-                        source= {require('../assets/images/person.png')}
-                        placeholder="Date of birth" 
-                    />
+                    <View style={styles.category}>
+                        <Category 
+                            source={Images.puppy}
+                            categoryName="Puppy"
+                        />
 
-                    <Input
-                        source= {require('../assets/images/person.png')}
-                        placeholder="Gender" 
-                    />
+                        <Category 
+                            source={Images.smalldog}
+                            categoryName="Small Dog"
+                        />
 
-                    <View style={styles.buttonContainer}>
-                        <View style={styles.button}>
-                            <Button
-                            style={{backgroundColor: Colors.primary, color: Colors.white, marginLeft:5 ,marginRight:5}} 
-                            ButtonText="Add pet"
-                            //   onPress={() => navigation.navigate('UserVerified')}  
-                            />
-                            <Button
-                            style={{backgroundColor: Colors.white, color: Colors.black, marginLeft:5 ,marginRight:5}}
-                            ButtonText="Add more pet"
-                            //   onPress={() => navigation.navigate('UserNumber')}
-                            />
-                        </View>
-                    </View>    
+                        <Category 
+                            source={Images.mediumdog}
+                            categoryName="Medium Dog"
+                        />
+                    </View>
+
+                    <View style={styles.category}>
+                        <Category 
+                            source={Images.largedog}
+                            categoryName="Large Dog"
+                        />
+
+                        <Category 
+                            source={Images.giantdog}
+                            categoryName="Giant Dog"
+                        />
+                    </View>
+
+                    <View style={{marginTop: 30}}>
+                        <Input
+                            source= {Images.subtype}
+                            placeholder="Date of birth/Adaption Date*" 
+                        />
+                        <Input
+                            source= {Images.others}
+                            placeholder="Gender" 
+                        />
+
+                        <FlatButton
+                            ButtonText="Next"
+                            onPress={() => navigation.navigate('Address')}
+                        />
+                    </View>
+
+
                 </View>
                 
                     
@@ -118,17 +128,10 @@ const styles = StyleSheet.create({
     },
     welcome: {
         flex: 1,
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: 'bold',
         color: Colors.white,
         textAlign:'center'
-    },
-    logintext: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: Colors.white,
-        textAlign: 'center',
-        marginTop: 5
     },
     buttonContainer:{
         flexDirection: 'column',
@@ -138,5 +141,12 @@ const styles = StyleSheet.create({
     button: {
         justifyContent: 'space-evenly',
         flexDirection: 'row',
+    },
+    category:{
+        flexDirection: 'row',
+        justifyContent:'space-around',
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 10
     }
 })

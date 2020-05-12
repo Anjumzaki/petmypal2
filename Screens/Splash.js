@@ -4,7 +4,8 @@ import {
   View,
   Image,
   Dimensions,
-  ImageBackground
+  ImageBackground,
+  Text
 } from 'react-native';
 import Colors from '../Constants/Colors'
 
@@ -32,6 +33,7 @@ export default ({navigation}) => {
                 style={styles.Logo}
                 source = {require('../assets/images/icon.png')} 
               />
+              <Text style={{color: Colors.white, textAlign: 'center', fontWeight: 'bold'}}> V1.0 </Text>
             </View>
               
       </View>
@@ -46,7 +48,7 @@ const styles = StyleSheet.create({
   },
   image:{
         width: width,
-        height: '75%',
+        height: '70%',
         paddingHorizontal:10
   },
   Logo:{
