@@ -32,7 +32,7 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>Create your free account today</Text>
                 </View>
            
-                <View style={{flex: 1, marginTop:'20%'}}>
+                <View style={{flex: 1, marginTop:'15%'}}>
                     <Text style={styles.logintext}>Select  your pet catagory</Text>
 
                     <View style={styles.category}>
@@ -119,9 +119,6 @@ export default ({navigation}) => {
                         onPress={() => navigation.navigate('CreateAccount')}
                     />
                 </View>
-                <Footer 
-                    source={require('../assets/images/CreateFooter.png')}
-                />
 
                 </ImageBackground>
             </ScrollView>
@@ -132,6 +129,7 @@ const styles = StyleSheet.create({
     container:{
         width:width,
         height:height,
+        paddingBottom: '10%'
     },
     image:
     {
@@ -152,7 +150,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     welcome: {
-        flex: 1,
         fontSize: 30,
         fontWeight: 'bold',
         color: Colors.white,

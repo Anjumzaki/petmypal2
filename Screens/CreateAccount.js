@@ -49,23 +49,8 @@ export default ({navigation}) => {
 
                 <View style={{marginTop:'10%'}}>
                     <Input
-                        source={Images.petname}
-                        placeholder="Pet Name" 
-                    />
-
-                    <Input
-                        source= {Images.person}
-                        placeholder="Pet Owner First Name" 
-                    />
-
-                    <Input
-                        source= {Images.person}
-                        placeholder="Pet Owner Last Name" 
-                    />
-
-                    <Input
-                        source= {Images.number}
-                        placeholder="Mobile Number" 
+                        source={Images.businessicon}
+                        placeholder="Business Name" 
                     />
 
                     <FlatButton

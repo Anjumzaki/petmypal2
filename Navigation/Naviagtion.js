@@ -36,6 +36,15 @@ import VendorSignin from '../Screens/VendorSignin';
 import VendorSignup from '../Screens/VendorSignup';
 import CreateAccountCategory from '../Screens/CreateAccountCategory';
 import CreatePassword from '../Screens/CreatePassword'
+import VendorWelcome from '../Screens/Vendor/VendorWelcome';
+import VendorSetup from '../Screens/Vendor/VendorSetup'
+import VendorverifyNumber from '../Screens/Vendor/VendorverifyNumber';
+import VendorVerified from '../Screens/Vendor/VendorVerified';
+import VendorNumber from '../Screens/Vendor/VendorNumber';
+import VendorAccountSetup from '../Screens/Vendor/VendorAccountSetup';
+import VendorAddress from '../Screens/Vendor/VendorAddress';
+import VendorProfile from '../Screens/Vendor/VendorProfile'
+import VendorSetupComplete from '../Screens/Vendor/VendorSetupComplete'
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -178,6 +187,42 @@ export default () => {
                 />
                 <Stack.Screen name="PetRegister" 
                     component={PetRegister}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorWelcome" 
+                    component={VendorWelcome}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorSetup" 
+                    component={VendorSetup}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorverifyNumber" 
+                    component={VendorverifyNumber}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorVerified" 
+                    component={VendorVerified}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorNumber" 
+                    component={VendorNumber}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorAccountSetup" 
+                    component={VendorAccountSetup}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorAddress" 
+                    component={VendorAddress}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorProfile" 
+                    component={VendorProfile}
+                    options={{ headerShown: false }}
+                />
+                <Stack.Screen name="VendorSetupComplete" 
+                    component={VendorSetupComplete}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen name="WhatsOnMind" 

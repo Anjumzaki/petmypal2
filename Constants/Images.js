@@ -1,4 +1,8 @@
 const Images = {
+    icon: require('../assets/images/icon.png'),
+    footer1: require('../assets/images/CreateFooter.png'),
+    footer2: require('../assets/images/VerifyFooter.png'),
+    footer3: require('../assets/images/Footer3.png'),
     pet1: require('../assets/images/pet1.png'),
     pet2: require('../assets/images/pet2.png'),
     pet3: require('../assets/images/pet3.png'),
@@ -26,7 +30,17 @@ const Images = {
     password: require('../assets/images/password.png'),
     number: require('../assets/images/number.png'),
     petname: require('../assets/images/petname.png'),
-    person: require('../assets/images/person.png')
+    person: require('../assets/images/person.png'),
+    vendorBackground: require('../assets/images/vendorBackground.png'),
+    businessicon: require('../assets/images/businessName.png'),
+    addressIcon: require('../assets/images/address.png'),
+    countryIcon: require('../assets/images/country.png'),
+    stateIcon: require('../assets/images/state.png'),
+    websiteIcon: require('../assets/images/webiste.png'),
+    cityIcon: require('../assets/images/city.png'),
+    zipIcon: require('../assets/images/zipcode.png'),
+    profileIcon: require('../assets/images/profileIcon.png'),
+    coverIcon: require('../assets/images/coverIcon.png')
 }
 
 export default Images;

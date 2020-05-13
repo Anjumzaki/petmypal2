@@ -14,12 +14,9 @@ export default (props) => {
 
 const styles = StyleSheet.create({
     Container:{
-        flexDirection: 'column',
-        justifyContent:'flex-end',
+        // justifyContent:'flex-end',
         alignItems:'center',
-        position: 'absolute',
-        alignSelf: 'center',
-        top: '87%',
-        paddingBottom:50
+        marginTop: 150,
+        marginBottom:50
     }
 })

@@ -32,7 +32,7 @@ export default ({navigation}) => {
                         </TouchableOpacity>
 
                         <TouchableOpacity 
-                            onPress={() => navigation.navigate('Signup')}
+                            onPress={() => navigation.navigate('VendorWelcome')}
                         >
                             <Text style={styles.gmtext}>Signup as Veterinary</Text>
                         </TouchableOpacity>
