@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         borderColor: Colors.primary,
         width: '80%',
         alignSelf: 'center',
-        padding: 10,
+        padding: 8,
         borderRadius: 24,
         backgroundColor: Colors.primary,
         textAlign: 'center',
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     signin: {
         textAlign: 'center',
-        fontSize: 18,
+        fontSize: 16,
         color: Colors.white,
         fontWeight: 'bold'
     },

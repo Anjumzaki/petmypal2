@@ -232,9 +232,9 @@ export default () => {
                         headerBackTitle:'none',
                         headerTitle: 'News Feed',
                         headerRight: () => (
-                            <Text
-                                title="Post"
-                            />
+                            <TouchableOpacity style={{padding:10}}>
+                                <Text style={{fontSize:18}}>Post</Text>
+                            </TouchableOpacity>
                         ) 
                     }}
                 />

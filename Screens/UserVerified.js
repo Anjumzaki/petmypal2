@@ -30,7 +30,7 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>Verification code verified</Text>
                 </View>
 
-                <View style={{flex:1 , marginTop:'25%'}}>
+                <View style={{flex:1 , marginTop:'35%'}}>
                     <Input
                         source= {Images.number}
                         placeholder="Number" 
@@ -90,9 +90,9 @@ const styles = StyleSheet.create({
     },
     paltext: {
         width: 80,
-        height:80,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()+5
+        marginTop:getStatusBarHeight()
     },
     textview: {
         flexDirection: 'column',

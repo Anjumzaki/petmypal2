@@ -30,7 +30,7 @@ export default ({navigation}) => {
                     <Text style={styles.welcome}>A little more about yourself</Text>
                 </View>
            
-               <View style={{flex: 1, marginTop:'10%'}}>
+               <View style={{flex: 1, marginTop:'20%'}}>
                <Input
                     source= {Images.email}
                     placeholder="Email" 
@@ -96,9 +96,9 @@ const styles = StyleSheet.create({
     },
     paltext: {
         width: 80,
-        height:80,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()+5
+        marginTop:getStatusBarHeight()
     },
     textview: {
         flexDirection: 'column',

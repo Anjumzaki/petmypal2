@@ -71,9 +71,9 @@ const styles = StyleSheet.create({
 
   paltext: {
     width: 80,
-    height:80,
+    height:40,
     alignSelf: 'flex-end',
-    marginTop:getStatusBarHeight()+5
+    marginTop:getStatusBarHeight()
   },
   textview:{
       paddingBottom:100,

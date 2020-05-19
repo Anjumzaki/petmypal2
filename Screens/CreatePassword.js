@@ -31,7 +31,7 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>Create your free account today</Text>
                 </View>
            
-               <View style={{flex: 1, marginTop:'20%'}}>
+               <View style={{flex: 1, marginTop:'30%'}}>
                <Input
                     source= {Images.password}
                     placeholder="Password" 
@@ -87,9 +87,9 @@ const styles = StyleSheet.create({
     },
     paltext: {
         width: 80,
-        height:80,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()+5
+        marginTop:getStatusBarHeight()
     },
     textview: {
         flexDirection: 'column',

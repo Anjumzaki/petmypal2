@@ -133,7 +133,7 @@ export default ({navigation}) => {
 
                     </View>
 
-                    <View style={{width: 150}}>
+                    <View style={{width: 120}}>
                         <FlatButton
                             ButtonText="Contact us"
                         />
@@ -198,7 +198,7 @@ const styles = StyleSheet.create({
     },
     centeredView: {
         position: 'absolute',
-        top:50,
+        top:80,
         left:'52%',
         flex: 1,
         marginTop: 2

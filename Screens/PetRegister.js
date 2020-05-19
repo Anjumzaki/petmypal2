@@ -31,7 +31,7 @@ export default ({navigation}) => {
                     <Text style={styles.welcome}>Tell us more about [PET NAME]</Text>
                 </View>
 
-                <View style={{flex:1 , marginTop:'5%'}}>
+                <View style={{flex:1 , marginTop:'25%'}}>
                     <Input
                         source= {require('../assets/images/subtype.png')}
                         placeholder="Sub type" 
@@ -107,9 +107,9 @@ const styles = StyleSheet.create({
     },
     paltext: {
         width: 80,
-        height:80,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()+5
+        marginTop:getStatusBarHeight()
     },
     petProfile:{
         width: 80,

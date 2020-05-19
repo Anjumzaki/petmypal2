@@ -24,7 +24,7 @@ export default ({navigation}) => {
                 />
                 
                 <AddPet 
-                    // onPress= {() => navigation.navigate('AddNewPet')}
+                    // onPress= {() => navigation.navigate('CreateAccountCategory')}
                 />
 
                 <SuggestFriends/>

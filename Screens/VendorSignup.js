@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
     },
     paltext: {
         width: 80,
-        height:80,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()+10
+        marginTop:getStatusBarHeight()
     },
     textview:
     {
         flex: 1,
-        top: '60%',
+        top: '50%',
         position: 'absolute',
         flexDirection: 'column',
         alignSelf: 'center',

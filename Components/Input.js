@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
         width:'75%',
         height: 35,
         marginStart: 10,
-        fontSize:18,
+        fontSize:16,
         color: Colors.inputColor
     }  
 })

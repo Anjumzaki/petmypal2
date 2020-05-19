@@ -31,7 +31,7 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>We'll text a code to verify mobile</Text>
                 </View>
            
-               <View style={{flex: 1, marginTop:'30%'}}>
+               <View style={{flex: 1, marginTop:'35%'}}>
                     <Input
                         source= {Images.number}
                         placeholder="Number" 
@@ -65,9 +65,9 @@ const styles = StyleSheet.create({
     },
     paltext: {
         width: 80,
-        height:80,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()+5
+        marginTop:getStatusBarHeight()
     },
     textview: {
         flexDirection: 'column',
