@@ -46,7 +46,7 @@ export default ({navigation}) => {
               <Button
                 style={{backgroundColor: Colors.white, color: Colors.black}}
                 ButtonText="Sign up"
-                onPress={() => navigation.navigate('VendorSignup')}
+                onPress={() => navigation.navigate('Signup')}
               />
             </View>
 

@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
 import StatusBar from '../Components/StatusBar';
 import Input from '../Components/Input';
 import FlatButton from '../Components/FlatButton';
 import Colors from '../Constants/Colors'
 import {getStatusBarHeight} from 'react-native-status-bar-height';
+import { CheckBox } from 'react-native-elements'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
 
 export default ({navigation}) => {
-
+    const [isSelected, setSelection] = useState(false);
     return (
             <View>
                 <StatusBar/>
@@ -26,26 +27,40 @@ export default ({navigation}) => {
                     <Text style={styles.logintext}>Verification code has been sent to your{'\n'} mobile number</Text>
                 </View>
            
-                <View style={{flex:1 , marginTop:'30%'}}>
+                <View style={{flex:1 , marginTop:'35%'}}>
                     <Input
                         source= {require('../assets/images/email.png')}
                         placeholder="Email" 
                     />
-                    <View
-                        style={{flexDirection:'row', justifyContent:'space-around'}}>
-                        <TouchableOpacity>
-                            <Image
-                                style={{height:60, width: 100}} 
-                                source={require('../assets/images/text.png')}
-                                resizeMode={'contain'} />
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Image
-                                style={{height:60, width: 100}} 
-                                source={require('../assets/images/call.png')}
-                                resizeMode={'contain'} />
-                        </TouchableOpacity>
+                    
+                    <View style={{flexDirection: 'row', justifyContent:'center'}}>
+              <View style={styles.CheckBoxContainer}>
+                    <CheckBox
+                        center
+                        title='Business'
+                        containerStyle={{backgroundColor: 'transparent', borderColor: 'transparent'}}
+                        textStyle={{color: Colors.white}}
+                        checked={isSelected}
+                        uncheckedColor= {Colors.white}
+                        onPress= { isSelected => setSelection(true)}
+                    />
+                        {/* <Text style={styles.label}>Business</Text> */}
                     </View>
+                    
+                    <View style={styles.CheckBoxContainer}>
+                        <CheckBox
+                            center
+                            title="Individual"
+                            containerStyle={{backgroundColor: 'transparent', borderColor: 'transparent'}}
+                            textStyle={{color: Colors.white}}
+                            checked={!isSelected}
+                            uncheckedColor= {Colors.white}
+                            onPress= { isSelected => setSelection(true)}
+                        />
+                        {/* <Text style={styles.label}>Individual</Text> */}
+                    </View>
+              </View>
+
             
                     <FlatButton
                         style={{marginTop: '5%'}}
@@ -88,6 +103,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
         fontWeight: 'bold',
         color: Colors.white,
+        textAlign: "center"
     },
     logintext: {
         fontSize: 16,
@@ -98,5 +114,12 @@ const styles = StyleSheet.create({
     resetButtons:{
         flexDirection:'row', 
         justifyContent:'space-between'
-    }
+    },
+    CheckBoxContainer:{
+        flexDirection: 'row',
+        // justifyContent: 'center',
+        alignItems: 'center',
+        marginTop:10,
+        marginBottom: 10    
+    },
 })

@@ -5,10 +5,10 @@ import Input from '../../Components/Input';
 import FlatButton from '../../Components/FlatButton';
 import Colors from '../../Constants/Colors'
 import Footer from '../../Components/Footer';
-import CheckBox from '@react-native-community/checkbox'
+// import CheckBox from '@react-native-community/checkbox'
 import {getStatusBarHeight} from 'react-native-status-bar-height';
-import Category from '../../Components/Category';
 import Images from '../../Constants/Images'
+import { CheckBox } from 'react-native-elements'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -37,21 +37,29 @@ export default ({navigation}) => {
               
               <View style={{flexDirection: 'row', justifyContent:'center'}}>
               <View style={styles.CheckBoxContainer}>
-                        <CheckBox
-                        value={isSelected}
-                        style={styles.checkbox}
+                    <CheckBox
+                        center
+                        title='Business'
+                        containerStyle={{backgroundColor: 'transparent', borderColor: 'transparent'}}
+                        textStyle={{color: Colors.white}}
+                        checked={isSelected}
+                        uncheckedColor= {Colors.white}
                         onPress= { isSelected => setSelection(true)}
-                        />
-                        <Text style={styles.label}>Business</Text>
+                    />
+                        {/* <Text style={styles.label}>Business</Text> */}
                     </View>
                     
                     <View style={styles.CheckBoxContainer}>
                         <CheckBox
-                        value={isSelected}
-                        style={styles.checkbox}
-                        onPress= { isSelected => setSelection(true)}
+                            center
+                            title="Individual"
+                            containerStyle={{backgroundColor: 'transparent', borderColor: 'transparent'}}
+                            textStyle={{color: Colors.white}}
+                            checked={!isSelected}
+                            uncheckedColor= {Colors.white}
+                            onPress= { isSelected => setSelection(true)}
                         />
-                        <Text style={styles.label}>Individual</Text>
+                        {/* <Text style={styles.label}>Individual</Text> */}
                     </View>
               </View>
 
@@ -65,20 +73,30 @@ export default ({navigation}) => {
 
                     <View style={[styles.CheckBoxContainer, {marginLeft:'20%',}]}>
                         <CheckBox
-                        value={isSelected}
-                        style={styles.checkbox}
-                        onPress= { isSelected => setSelection(true)}
+                            center
+                            title="Pet-sitting"
+                            checked={isSelected}
+                            containerStyle={{backgroundColor: 'transparent', borderColor: 'transparent'}}
+                            textStyle={{color: Colors.white}}
+                            checked={isSelected}
+                            uncheckedColor= {Colors.white}
+                            onPress= { isSelected => setSelection(true)}
                         />
-                        <Text style={styles.label}>Pet-sitting</Text>
+                        {/* <Text style={styles.label}>Pet-sitting</Text> */}
                     </View>
                     
                     <View style={[styles.CheckBoxContainer, {marginLeft:'20%',}]}>
                         <CheckBox
-                        value={isSelected}
-                        style={styles.checkbox}
-                        onPress= { isSelected => setSelection(true)}
+                            center
+                            title="Vet Services"
+                            checked={isSelected}
+                            containerStyle={{backgroundColor: 'transparent', borderColor: 'transparent'}}
+                            textStyle={{color: Colors.white}}
+                            checked={isSelected}
+                            uncheckedColor= {Colors.white}
+                            onPress= { isSelected => setSelection(true)}
                         />
-                        <Text style={styles.label}>Vet Services</Text>
+                        {/* <Text style={styles.label}>Vet Services</Text> */}
                     </View>
 
                     <FlatButton
@@ -141,9 +159,9 @@ const styles = StyleSheet.create({
         marginBottom: 10    
     },
     checkbox:{
-        borderColor: Colors.white,
+        // borderColor: Colors.white,
         // backgroundColor: Colors.white,
-        tintColor: Colors.white
+        // tintColor: Colors.white
     },
     label:{
       color: Colors.white,

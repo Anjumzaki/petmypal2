@@ -49,6 +49,13 @@ export default ({navigation}) => {
                     >
                         <Text style={{fontSize: 18,color: 'white',textAlign: 'center'}}>Forgot Your Password?</Text>
                     </TouchableOpacity>
+
+                    <TouchableOpacity
+                        style={styles.forgot}
+                        onPress={() => navigation.navigate('VendorWelcome')}
+                    >
+                        <Text style={{fontSize: 18,color: 'white',textAlign: 'center'}}>Don't have account? Sign Up</Text>
+                    </TouchableOpacity>
                 </View>
                 
                 </ImageBackground>
