@@ -124,7 +124,7 @@ export default () => {
 
     return(
         <NavigationContainer >
-            <Stack.Navigator initialRouteName="PetRegister">
+            <Stack.Navigator >
                 <Stack.Screen name="Splash" 
                     component={Splash}
                     options={{ headerShown: false }}
