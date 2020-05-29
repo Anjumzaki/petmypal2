@@ -17,7 +17,7 @@ export default ({navigation}) => {
 
     return (
             <ScrollView
-                style={styles.container}>
+                contentContainerStyle={styles.container}>
                 <StatusBar/>
                 <ImageBackground source={require('../assets/images/Create.png')} style={styles.image} >
                 <Image
@@ -75,40 +75,43 @@ export default ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        width:width,
-        height:height,
-    },
-    image:
-    {
-        width: width,
-        height: height,
-        paddingHorizontal: 10
-    },
-    paltext: {
+    container: {
+        flex: 1,
+        justifyContent: 'space-between',
+      },
+      image: {
+        flex: 1,
+        paddingHorizontal: 10,
+        backgroundColor: 'blue',
+        justifyContent: 'space-between',
+      },
+      paltext: {
         width: 80,
-        height:40,
+        height: 40,
         alignSelf: 'flex-end',
-        marginTop:getStatusBarHeight()
-    },
-    textview: {
-        flexDirection: 'column',
-        position: 'absolute',
-        top: '15%',
+        marginTop: getStatusBarHeight(),
+      },
+      textview: {
         alignSelf: 'center',
-    },
-    welcome: {
+      },
+      welcome: {
         fontSize: 30,
         fontWeight: 'bold',
         color: Colors.white,
-        textAlign:'center'
-    },
-    logintext: {
+      },
+      logintext: {
         fontSize: 16,
         fontWeight: 'bold',
         color: Colors.white,
         textAlign: 'center',
-    },
+      },
+      category: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginTop: 10,
+        marginBottom: 10,
+      },
     policy:{
         textAlign:'center',
         color:'white',

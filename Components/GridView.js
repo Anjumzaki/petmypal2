@@ -8,7 +8,7 @@ const height = Dimensions.get('screen').height;
 export default ({navigation}) => {
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.Grid}>
                 <View style={styles.childGrid}>
                     <TouchableOpacity>
