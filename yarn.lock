@@ -2516,6 +2516,11 @@ ee-first@1.1.1:
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+emoji-datasource@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/emoji-datasource/-/emoji-datasource-5.0.1.tgz#31eaaff7caa6640929327b4f4ff66f2bf313df0a"
+  integrity sha512-RXokuCv4o8RFLiigN1skAdZwJuJWqtBvcK3GVKpvAL/7BeH95enmKsli7cG8YZ85RTjyEe3+GAdpJJOV43KLKQ==
+
 emoji-regex@^7.0.1:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
@@ -5695,6 +5700,13 @@ react-native-elements@^2.0.0:
     react-native-ratings "^6.5.0"
     react-native-status-bar-height "^2.2.0"
 
+react-native-emoji-selector@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/react-native-emoji-selector/-/react-native-emoji-selector-0.1.8.tgz#ef80765afea7bcbcf5bcca5ba138dc7ea60ee4c4"
+  integrity sha512-PRYnzXVSxDuOm3EZEhbWAWnElQrdSEn+4tqB/BFbLdvRdrOuzFb6DqjLcyBYinSmEcxh2F4onE6h6VBHglYCSg==
+  dependencies:
+    emoji-datasource "^5.0.1"
+
 react-native-gesture-handler@^1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.6.1.tgz#678e2dce250ed66e93af409759be22cd6375dd17"
@@ -5705,7 +5717,7 @@ react-native-gesture-handler@^1.6.1:
     invariant "^2.2.4"
     prop-types "^15.7.2"
 
-react-native-iphone-x-helper@^1.2.1:
+react-native-iphone-x-helper@^1.2.0, react-native-iphone-x-helper@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
@@ -5739,6 +5751,13 @@ react-native-status-bar-height@^2.2.0, react-native-status-bar-height@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-native-status-bar-height/-/react-native-status-bar-height-2.5.0.tgz#bc0fb85230603850aab9667ee8111a62954de90c"
   integrity sha512-sYBCPYA/NapBSHkdm/IVL4ID3LLlIuLqINi2FBDyMkc2BU9pfSGOtkz9yfxoK39mYJuTrlTOQ7mManARUsYDSA==
+
+react-native-sticky-keyboard-accessory@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/react-native-sticky-keyboard-accessory/-/react-native-sticky-keyboard-accessory-0.1.3.tgz#1647d12f30ec78d8ee0f08a2271da6dac6155377"
+  integrity sha512-Bcwq9P0xgbQWXRLfxJq0sddA7AAZ03RUX2rSwIy6ecWUGH8EvCBrpl233S/QjyK5Mm7zsNBLBLqsBEbyw9mRyQ==
+  dependencies:
+    react-native-iphone-x-helper "^1.2.0"
 
 react-native-tab-view@^2.14.0:
   version "2.14.0"

@@ -124,11 +124,7 @@ export default () => {
 
     return(
         <NavigationContainer>
-<<<<<<< HEAD
-            <Stack.Navigator initialRouteName={'Home'}>
-=======
-            <Stack.Navigator>
->>>>>>> 35773da280de00712bbb1494ccd6710b0ebc6ec7
+            <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Splash" 
                     component={Splash}
                     options={{ headerShown: false }}

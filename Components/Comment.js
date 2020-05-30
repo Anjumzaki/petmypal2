@@ -1,8 +1,16 @@
 import React from 'react';
-import {Dimensions, View, Text, Image, StyleSheet} from 'react-native';
+import {
+  Dimensions,
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+} from 'react-native';
 import Colors from '../Constants/Colors';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Entypo';
+import KeyboardAccessory from 'react-native-sticky-keyboard-accessory';
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -74,7 +82,9 @@ export default class Comment extends React.Component {
             </TouchableOpacity>
           </View>
         </View>
+       
       </View>
+      
     );
   }
 }
