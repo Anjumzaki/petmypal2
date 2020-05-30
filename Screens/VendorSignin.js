@@ -13,6 +13,8 @@ import StatusBar from '../Components/StatusBar';
 import Input from '../Components/Input';
 import FlatButton from '../Components/FlatButton';
 import Colors from '../Constants/Colors';
+import {Loader} from '../Components/Loader';
+
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -66,7 +68,6 @@ export default class VendorSignin extends Component {
       formdata.append('server_key', 'f28ce8096b13cfc4e385a1ef396dd94e');
       formdata.append('username', email);
       formdata.append('password', password);
-
       var requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -76,10 +77,19 @@ export default class VendorSignin extends Component {
       fetch('https://dev.petmypal.biz/api/auth', requestOptions)
         .then((response) => response.json())
         .then((result) => {
-          if (result.api_status === 200) {
-            AsyncStorage.setItem('session', result.access_token);
+          var result_failure = JSON.stringify(result.api_status).slice(1, -1);
+          var result_succes = JSON.stringify(result.api_status);
+          if (result_succes === '200') {
             this.props.navigation.navigate('Home');
+          } else if (result_failure === '400') {
+            var errors = JSON.stringify(result.errors.error_text).slice(1, -1);
+            alert(errors);
           }
+
+          // if (result.api_status === 200) {
+          //   AsyncStorage.setItem('session', result.access_token);
+          //   this.props.navigation.navigate('Home');
+          // }
           this._controlLoadingView();
         })
         .catch((error) => {
@@ -100,6 +110,7 @@ export default class VendorSignin extends Component {
             style={styles.paltext}
             resizeMode={'contain'}
           />
+          <Loader visible={this.state.isLoadingVisible} />
 
           <View style={styles.textview}>
             <Text style={styles.welcome}>Welcome Vendor</Text>
