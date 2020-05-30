@@ -3,6 +3,7 @@ import {Dimensions, View, Text, Image, StyleSheet} from 'react-native'
 import Colors from '../Constants/Colors'
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Comment from './Comment';
+import {Entypo} from 'react-native-vector-icons'
 
 const width = Dimensions.get('screen').width;
 const height = Dimensions.get('screen').height;
@@ -35,11 +36,7 @@ export default (props) => {
                 
                 <View style={styles.reactions}>
                     <TouchableOpacity>
-                        <Image
-                            style={styles.reactionImgae}
-                            source={require('../assets/images/like.png')}
-                            resizeMode={'contain'}
-                        />
+                        <Entypo name="heart" />
                     </TouchableOpacity>
 
                     <TouchableOpacity
