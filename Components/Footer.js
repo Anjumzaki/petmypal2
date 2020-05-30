@@ -16,11 +16,6 @@ const styles = StyleSheet.create({
     Container:{
         // justifyContent:'flex-end',
         alignItems:'center',
-<<<<<<< HEAD
         marginBottom:20
-=======
-        marginTop: 150,
-        marginBottom:50
->>>>>>> 141026d5c2a7a189c4a7dd4c30956b858c9f384d
     }
 })
