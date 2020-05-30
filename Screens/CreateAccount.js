@@ -17,7 +17,7 @@ export default ({navigation}) => {
 
     return (
             <ScrollView
-                contentContainerStyle={styles.container}>
+                style={styles.container}>
                 <StatusBar/>
                 <ImageBackground source={require('../assets/images/Create.png')} style={styles.image} >
                 <Image
@@ -27,7 +27,7 @@ export default ({navigation}) => {
                 />
 
                 <View style={styles.textview}>
-                    <Text style={styles.welcome}>Create account </Text>
+                    <Text style={styles.welcome}>Create account</Text>
                     <Text style={styles.logintext}>Create your free account today</Text>
                 </View>
            
@@ -71,43 +71,34 @@ export default ({navigation}) => {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'space-between',
-      },
-      image: {
-        flex: 1,
-        paddingHorizontal: 10,
-        backgroundColor: 'blue',
-        justifyContent: 'space-between',
-      },
-      paltext: {
+    container:{
+        width:width,
+        height:height,
+    },
+    image:
+    {
+        width: width,
+        height: height,
+        paddingHorizontal: 10
+    },
+    paltext: {
         width: 80,
-        height: 40,
+        height:40,
         alignSelf: 'flex-end',
-        marginTop: getStatusBarHeight(),
-      },
-      textview: {
+        marginTop:getStatusBarHeight()
+    },
+    textview: {
+        flexDirection: 'column',
+        position: 'absolute',
+        top: '15%',
         alignSelf: 'center',
-      },
-      welcome: {
+    },
+    welcome: {
+        flex: 1,
         fontSize: 30,
         fontWeight: 'bold',
         color: Colors.white,
-      },
-      logintext: {
-        fontSize: 16,
-        fontWeight: 'bold',
-        color: Colors.white,
-        textAlign: 'center',
-      },
-      category: {
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        marginTop: 10,
-        marginBottom: 10,
-      },
+    },
     logintext: {
         fontSize: 16,
         fontWeight: 'bold',

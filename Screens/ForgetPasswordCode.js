@@ -15,7 +15,7 @@ export default ({navigation}) => {
 
     return (
             <View
-                container={styles.container}>
+                style={styles.container}>
                 <StatusBar/>
                 <ImageBackground source={require('../assets/images/Sign.png')} style={styles.image} >
                 <Image
@@ -99,6 +99,9 @@ const styles = StyleSheet.create({
         marginTop:getStatusBarHeight()
     },
     textview: {
+        flexDirection: 'column',
+        position: 'absolute',
+        top: '15%',
         alignSelf: 'center',
     },
     welcome: {

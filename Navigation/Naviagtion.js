@@ -123,8 +123,8 @@ export default () => {
     }
 
     return(
-        <NavigationContainer >
-            <Stack.Navigator >
+        <NavigationContainer>
+            <Stack.Navigator>
                 <Stack.Screen name="Splash" 
                     component={Splash}
                     options={{ headerShown: false }}

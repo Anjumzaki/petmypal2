@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5.46,
         elevation: 9,
         marginTop:10,
-        marginBottom: 30
+        marginBottom: 10
     },
     signin: {
         textAlign: 'center',
