@@ -90,12 +90,9 @@ const styles = StyleSheet.create({
     },
     textview: {
         flexDirection: 'column',
-        position: 'absolute',
-        top: '15%',
         alignSelf: 'center',
     },
     welcome: {
-        flex: 1,
         fontSize: 30,
         fontWeight: 'bold',
         color: Colors.white,

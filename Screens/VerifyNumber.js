@@ -35,11 +35,11 @@ export default class VerifyNumber extends React.Component {
     };
   }
 
-  componentDidMount = () => {
-    const {params} = this.props.navigation.state;
-    this.setState({phoneNumber: params.phoneNumber});
-    alert(this.state.phoneNumber);
-  };
+  //   componentDidMount = () => {
+  //     const {params} = this.props.navigation.state;
+  //     this.setState({phoneNumber: params.phoneNumber});
+  //     alert(this.state.phoneNumber);
+  //   };
 
   // loading //
   _controlLoadingView = () =>
@@ -238,12 +238,9 @@ const styles = StyleSheet.create({
   },
   textview: {
     flexDirection: 'column',
-    position: 'absolute',
-    top: '15%',
     alignSelf: 'center',
   },
   welcome: {
-    flex: 1,
     fontSize: 30,
     fontWeight: 'bold',
     color: Colors.white,

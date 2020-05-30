@@ -38,26 +38,31 @@ export default class Signin extends Component {
   // validations //
   validation() {
     const {email, password} = this.state;
+    console.log("dasd")
     if (email.trim() === '' && password.trim() === '') {
       this.setState({emailError: true, passwordError: true});
       return false;
     }
-    if (email.trim() === '') {
+   else  if (email.trim() === '') {
       this.setState({emailError: true});
       return false;
     }
-    if (password.trim() === '') {
+    else if (password.trim() === '') {
       this.setState({passwordError: true});
       return false;
     }
 
+   else
     return true;
   }
   // validations //
 
   // remote signin //
   _signin = () => {
+    console.log("Asda's")
+
     if (this.validation()) {
+        console.log("Asda's")
       this._controlLoadingView();
       const {email, password} = this.state;
       var myHeaders = new Headers();
@@ -88,6 +93,7 @@ export default class Signin extends Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <View>
         <StatusBar />
@@ -103,7 +109,7 @@ export default class Signin extends Component {
 
           <View style={styles.textview}>
             <Text style={styles.welcome}>Welcome back</Text>
-            <Text style={styles.logintext}>Login with your gmail</Text>
+            <Text style={styles.logintext}>Login with your Email</Text>
           </View>
 
           <View style={{flex: 1, marginTop: '30%'}}>
@@ -189,12 +195,9 @@ const styles = StyleSheet.create({
   },
   textview: {
     flexDirection: 'column',
-    position: 'absolute',
-    top: '17%',
     alignSelf: 'center',
   },
   welcome: {
-    flex: 1,
     fontSize: 30,
     fontWeight: 'bold',
     color: Colors.white,
