@@ -32,7 +32,7 @@ export default class PetOwner extends React.Component {
     };
   }
   async componentDidMount() {
-    var session = await AsyncStorage.getItem('session');
+    var session = await AsyncStorage.getItem('session')
     var formdata = new FormData();
     formdata.append('server_key', 'f28ce8096b13cfc4e385a1ef396dd94e');
     formdata.append('type', 'get_news_feed');
