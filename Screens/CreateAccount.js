@@ -31,7 +31,7 @@ export default class createAccount extends React.Component {
       username: '',
       firstname: '',
       lastname: '',
-      phoneNumber: '222',
+      phoneNumber: '',
       firstnameError: false,
       usernameError: false,
       lastnameError: false,
@@ -83,37 +83,35 @@ export default class createAccount extends React.Component {
   // validations //
 
   _nextForward = () => {
-    // if (this.validation()) {
-    //   const {username, firstname, lastname, phoneNumber} = this.state;
-    //   this._controlLoadingView();
-    //   var myHeaders = new Headers();
-    //   var formdata = new FormData();
-    //   formdata.append('server_key', 'f28ce8096b13cfc4e385a1ef396dd94e');
-    //   formdata.append('first_name', firstname);
-    //   formdata.append('last_name', lastname);
-    //   formdata.append('pet_name', username);
-    //   formdata.append('phone_number', phoneNumber);
+    if (this.validation()) {
+      const {username, firstname, lastname, phoneNumber} = this.state;
+      this._controlLoadingView();
+      var myHeaders = new Headers();
+      var formdata = new FormData();
+      formdata.append('server_key', 'f28ce8096b13cfc4e385a1ef396dd94e');
+      formdata.append('first_name', firstname);
+      formdata.append('last_name', lastname);
+      formdata.append('pet_name', username);
+      formdata.append('phone_number', phoneNumber);
 
-    //   var requestOptions = {
-    //     method: 'POST',
-    //     headers: myHeaders,
-    //     body: formdata,
-    //     redirect: 'follow',
-    //   };
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: formdata,
+        redirect: 'follow',
+      };
 
-    //   fetch('https://dev.petmypal.biz/api/create-account\n', requestOptions)
-    //     .then((response) => response.json())
-    //     .then((result) => {
-    //       alert(JSON.stringify(result.message));
-    //       this._controlLoadingView();
-    //     })
-    //     .catch((error) => console.log('error', error));
-    // }
-    const {phoneNumber} = this.state;
-
-    this.props.navigation.navigate('VerifyNumber', {
-      phoneNumber: phoneNumber,
-    });
+      fetch('https://dev.petmypal.biz/api/create-account\n', requestOptions)
+        .then((response) => response.json())
+        .then((result) => {
+          alert(JSON.stringify(result.message));
+          this._controlLoadingView();
+          this.props.navigation.navigate('VerifyNumber', {
+            phoneNumber: phoneNumber,
+          });
+        })
+        .catch((error) => console.log('error', error));
+    }
   };
 
   render() {
@@ -224,7 +222,7 @@ export default class createAccount extends React.Component {
               <Input
                 source={Images.businessicon}
                 placeholder="Phone Number"
-                value={this.state.lastname}
+                value={this.state.phoneNumber}
                 onChangeText={(phoneNumber) =>
                   this.setState({
                     phoneNumber: phoneNumber,

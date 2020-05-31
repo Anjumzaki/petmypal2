@@ -35,12 +35,34 @@ export default class VerifyNumber extends React.Component {
     };
   }
 
-  //   componentDidMount = () => {
-  //     const {params} = this.props.navigation.state;
-  //     this.setState({phoneNumber: params.phoneNumber});
-  //     alert(this.state.phoneNumber);
-  //   };
+  componentDidMount = () => {
+    const {phoneNumber} = this.props.route.params;
+    this.setState({phoneNumber: phoneNumber});
+  };
 
+  Resend = () => {
+    this._controlLoadingView();
+    const {phoneNumber} = this.state;
+    var myHeaders = new Headers();
+    var formdata = new FormData();
+    formdata.append('server_key', 'f28ce8096b13cfc4e385a1ef396dd94e');
+    formdata.append('phone_number', phoneNumber);
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow',
+    };
+
+    fetch('https://dev.petmypal.biz/api/send-code-sms\n', requestOptions)
+      .then((response) => response.json())
+      .then((result) => {
+        alert(result);
+        this._controlLoadingView();
+      })
+      .catch((error) => alert('error', error));
+  };
   // loading //
   _controlLoadingView = () =>
     this.setState({_controlLoadingView: !this.state.isLoadingVisible});
@@ -207,7 +229,7 @@ export default class VerifyNumber extends React.Component {
                     marginRight: 5,
                   }}
                   ButtonText="Resend"
-                  onPress={() => this.props.navigation.navigate('UserNumber')}
+                  onPress={() => this.Resend()}
                 />
               </View>
             </View>
