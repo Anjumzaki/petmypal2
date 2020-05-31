@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
     Suggest:{
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 22
+        fontSize: 22,
+        marginTop:10
     }
 })

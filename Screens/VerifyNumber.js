@@ -58,7 +58,7 @@ export default class VerifyNumber extends React.Component {
     fetch('https://dev.petmypal.biz/api/send-code-sms\n', requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        alert(result);
+        alert(JSON.stringify(result.errors.error_text).slice(1, -1));
         this._controlLoadingView();
       })
       .catch((error) => alert('error', error));
@@ -110,7 +110,7 @@ export default class VerifyNumber extends React.Component {
       )
         .then((response) => response.json())
         .then((result) => {
-          alert(result);
+          alert(JSON.stringify(result));
           this._controlLoadingView();
         })
         .catch((error) => alert('error', error));

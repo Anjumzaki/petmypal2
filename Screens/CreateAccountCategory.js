@@ -110,8 +110,6 @@ const styles = StyleSheet.create({
   },
   textview: {
     flexDirection: 'column',
-    position: 'absolute',
-    top: '15%',
     alignSelf: 'center',
   },
   welcome: {

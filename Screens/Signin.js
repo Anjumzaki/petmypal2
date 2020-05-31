@@ -38,31 +38,26 @@ export default class Signin extends Component {
   // validations //
   validation() {
     const {email, password} = this.state;
-    console.log("dasd")
+    console.log('dasd');
     if (email.trim() === '' && password.trim() === '') {
       this.setState({emailError: true, passwordError: true});
       return false;
-    }
-   else  if (email.trim() === '') {
+    } else if (email.trim() === '') {
       this.setState({emailError: true});
       return false;
-    }
-    else if (password.trim() === '') {
+    } else if (password.trim() === '') {
       this.setState({passwordError: true});
       return false;
-    }
-
-   else
-    return true;
+    } else return true;
   }
   // validations //
 
   // remote signin //
   _signin = () => {
-    console.log("Asda's")
+    console.log("Asda's");
 
     if (this.validation()) {
-        console.log("Asda's")
+      console.log("Asda's");
       this._controlLoadingView();
       const {email, password} = this.state;
       var myHeaders = new Headers();
