@@ -32,10 +32,8 @@ export default class PetOwner extends React.Component {
     };
   }
 
-  // loading //
   _controlLoadingView = () =>
     this.setState({_controlLoadingView: !this.state.isLoadingVisible});
-  // loading //
 
   async componentDidMount() {
     var session = await AsyncStorage.getItem('session');
@@ -54,7 +52,11 @@ export default class PetOwner extends React.Component {
       .then((response) => response.text())
       .then((result) =>
         this.setState(
-          {posts: result, loading: false, access_token: session},
+          {
+            posts: JSON.parse(result).data,
+            loading: false,
+            access_token: session,
+          },
           console.log(result),
         ),
       )
@@ -69,20 +71,28 @@ export default class PetOwner extends React.Component {
           source={require('../../assets/images/profilePicture.png')}
           onPress={() => this.props.navigation.navigate('WhatsOnMind')}
         />
-        <AddPet
-        // onPress= {() => navigation.navigate('CreateAccountCategory')}
-        />
+        <AddPet />
         <SuggestFriends />
 
         <WelcomePetMyPal />
         {this.state.loading ? (
           <ActivityIndicator color="black" />
         ) : (
-          <PostFeed
-            source={require('../../assets/images/profilePicture.png')}
-            PostSource={require('../../assets/images/Post.png')}
-            navigation={this.props.navigation}
-          />
+          this.state.posts &&
+          this.state.posts.length > 0 &&
+          this.state.posts.map((item, index) => (
+            <PostFeed
+              source={require('../../assets/images/profilePicture.png')}
+              PostSource={require('../../assets/images/Post.png')}
+              navigation={this.props.navigation}
+              key={index}
+              data={item}
+            />
+          ))
+
+          // this.state.posts.map((item, index) => (
+
+          // ))
         )}
       </ScrollView>
     );
