@@ -44,7 +44,7 @@ export default ({navigation}) => {
           }}>
           <TextInput
             style={{flex: 1, height: 30, height: 40}}
-            placeholder="Click me!"
+            placeholder="Comment here"
           />
           <Icon
             style={{marginLeft: 10, fontSize: 14}}

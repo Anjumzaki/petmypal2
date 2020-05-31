@@ -59,7 +59,7 @@ export default class VendorSignin extends Component {
   // validations //
 
   // remote signin //
-  _signin = () => {
+  _signin = async () => {
     if (this.validation()) {
       this._controlLoadingView();
       const {email, password} = this.state;
@@ -74,12 +74,13 @@ export default class VendorSignin extends Component {
         body: formdata,
         redirect: 'follow',
       };
-      fetch('https://dev.petmypal.biz/api/auth', requestOptions)
+     await fetch('https://dev.petmypal.biz/api/auth', requestOptions)
         .then((response) => response.json())
         .then((result) => {
           var result_failure = JSON.stringify(result.api_status).slice(1, -1);
           var result_succes = JSON.stringify(result.api_status);
           if (result_succes === '200') {
+             AsyncStorage.setItem('session',result.access_token);
             this.props.navigation.navigate('Home');
           } else if (result_failure === '400') {
             var errors = JSON.stringify(result.errors.error_text).slice(1, -1);
