@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable no-alert */
+=======
+>>>>>>> 06fa7ba696eadcb362e28996f40030f2370fd63f
 /* eslint-disable react-native/no-inline-styles */
 import React, {Component} from 'react';
 import {
@@ -75,13 +78,21 @@ export default class VendorSignin extends Component {
         body: formdata,
         redirect: 'follow',
       };
+<<<<<<< HEAD
       await fetch('https://dev.petmypal.biz/api/auth', requestOptions)
+=======
+     await fetch('https://dev.petmypal.biz/api/auth', requestOptions)
+>>>>>>> 06fa7ba696eadcb362e28996f40030f2370fd63f
         .then((response) => response.json())
         .then((result) => {
           var result_failure = JSON.stringify(result.api_status).slice(1, -1);
           var result_succes = JSON.stringify(result.api_status);
           if (result_succes === '200') {
+<<<<<<< HEAD
             AsyncStorage.setItem('session', result.access_token);
+=======
+             AsyncStorage.setItem('session',result.access_token);
+>>>>>>> 06fa7ba696eadcb362e28996f40030f2370fd63f
             this.props.navigation.navigate('Home');
           } else if (result_failure === '400') {
             var errors = JSON.stringify(result.errors.error_text).slice(1, -1);
